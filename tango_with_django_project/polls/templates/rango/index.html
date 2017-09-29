@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                    <li><a href="/rango/{{ category.id }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>if u want to see categories.</strong>
+        {% endif %}
+
+        <a href="{% url 'rango:detail'%}">category</a>
+    </body>
+</html>
+

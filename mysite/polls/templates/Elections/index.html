@@ -1,0 +1,9 @@
+{% if latest_voter_list %}
+    <ul>
+    {% for name in latest_voter_list %}
+        <li><a href="/Elections/{{ name.id }}/">{{ name.first_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

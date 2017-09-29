@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Election Commission</title>
+</head>
+<body>
+<h1>{{ voter.first_name }}</h1>
+
+<ul>
+{% for choice in voter.choice_set.all %}
+    <li>{{ choice.party }} -- {{ choice.vote }} vote{{ choice.vote  |pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'Elections:detail' voter.id %}">Vote again?</a>
+</body>
+</html>
